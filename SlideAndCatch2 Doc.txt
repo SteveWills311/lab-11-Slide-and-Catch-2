@@ -1,0 +1,116 @@
+Steve Wills
+11/6/24
+Slide and Catch Algo
+
+import random, pygame, simpleGE
+
+create a class called Ball(simpleGe.Sprite)
+	def init(self, scene)
+		super init(scene)
+		set image (golfball.png)
+		set size
+		set min and max speed
+		self.reset()
+
+	#This reset function will determine the ball's spawn location and fall speed
+	
+	def reset(self):
+		self.y = 15
+		self.x = random int 15, 625 (Doing this to create a buffer as opposed to using 0, self.screenWidth)
+		self.dy = random int (self.minSpeed, self.maxSpeed)
+
+	#check boundaries
+
+	def checkBounds(self):
+		if self.bottom > self.screenHeight:
+			self.reset()
+
+create class TinCup(simpleGe.Sprite)
+	def init (self, scene)
+	super init (scene)
+	set image (tincup.png)
+	set size
+	set position 320, 400
+	set moveSpeed 10
+
+	def process(self)
+		if self.isKeyPressed(pygame.K_LEFT):
+			self.x -= self.movespeed
+		if self.isKeyPressed(pygame.K_RIGHT):
+			self.x += self.movespeed
+		if self..... K UP and DOWN Y axis
+
+create class LblScore simpleGE.Label
+	init
+		super
+		set text
+		set center position 
+
+create LblTime .Scene
+	init
+		super
+		set text
+		set center position
+	
+
+create Game class(simpleGE.Scene):
+	def init (self)
+		super init()
+		set image background
+		self.sndBall = simpleGE.Sound(coin.wav)
+		self.numBalls = 7
+		self.score = 0
+		timer from GE
+		set to 10
+		self.tinCup = TinCup(self)
+		#create empty list for numBalls
+		self.balls = []
+		for i in range to append balls to numBalls. 
+		self.sprites = [self.tinCup, self.balls, self.lblScore, self.lblTime]
+
+	def process(self)
+		for ball in self.balls:
+			if ball.collidesWith(self.tinCup):
+			ball.reset()
+			self.sndBall.play()
+			self.score +1 
+			label text for score
+
+		
+		timer count down
+			stop when timer gets to 0
+
+create class Instructions(simpleGe.Scene)
+	def init (self, prevScore)
+		super init
+		self.prevScore = prevScore
+		Set image for background
+		set default response to quit instead of play for corner X close of window.
+		self.directions = simpoleGe.Multilabel()
+		enter all the text here... 
+		set cneter
+		set size
+
+		create button for play
+		create button for quit
+		create score label
+		set sprites
+	def process(self)
+		play button click
+		quit button click
+
+			
+def main()
+
+	keepGoing True
+	lastScore = 0
+	while keepGoing
+		instructions = instructions(last score)
+		Start
+	
+		start game from play click 
+		anything else quits and keepGoing is false
+
+
+the weird name main thing... 
+	
